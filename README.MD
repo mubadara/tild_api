@@ -29,10 +29,15 @@ Si votre installation de composer utilise php8 par défaut, vous pouvez override
     - PDO
     - php-mysqli
     - Zend OPCache (recommandé)
+
     Vous pouvez utiliser la commande suivante afin de voir les extensions actives:
+
         php -m
+
     Utilisez votre gestionnaire de paquets pour installer les extensions manquantes et/ou activez les dans le fichier php.ini de la version php utilisée, par exemple:
+
         /etc/php7/php.ini
+        
     il suffit de supprimer le ";" au début d'une ligne afin de la décommenter et d'activer l'extension en question.
 
 ## Création de la base de données
