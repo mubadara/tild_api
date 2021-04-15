@@ -17,6 +17,9 @@ class CreateWords extends Database {
                 $table->string('word');
                 $table->text('definition');
                 $table->boolean('is_valid');
+                $table->foreignId('user');
+                $table->integer('upvotes');
+                $table->integer('downvotes');
                 $table->timestamps();
             });
         endif;

@@ -13,6 +13,6 @@ class QuestionsSeeder extends Seeder
      */
     public function run()
     {
-        (new QuestionFactory)->create(5)->save();
+        (new QuestionFactory)->create(50)->save();
     }
 }

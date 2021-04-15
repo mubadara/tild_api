@@ -13,6 +13,6 @@ class WordsSeeder extends Seeder
      */
     public function run()
     {
-        (new WordFactory)->create(20)->save();
+        (new WordFactory)->create(50)->save();
     }
 }

@@ -20,6 +20,7 @@ class CreateUsers extends Database {
 				$table->string('email')->unique();
 				$table->timestamp('email_verified_at')->nullable();
 				$table->string('password');
+				$table->string('ranking');
 				$table->rememberToken();
 				$table->timestamps();
 			});

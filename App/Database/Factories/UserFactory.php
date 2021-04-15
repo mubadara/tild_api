@@ -22,6 +22,7 @@ class UserFactory extends Factory
 			'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
 			// $this->str is defined in the base factory
 			'remember_token' => $this->str::random(10),
+			'ranking' => rand(0, 500),
 		];
 	}
 }

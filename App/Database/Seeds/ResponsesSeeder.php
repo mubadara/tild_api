@@ -13,6 +13,6 @@ class ResponsesSeeder extends Seeder
      */
     public function run()
     {
-        (new ResponseFactory)->create(100)->save();
+        (new ResponseFactory)->create(200)->save();
     }
 }
