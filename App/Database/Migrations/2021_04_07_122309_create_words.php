@@ -14,7 +14,7 @@ class CreateWords extends Database {
         if(!$this->capsule::schema()->hasTable("words")):
             $this->capsule::schema()->create("words", function (Blueprint $table) {
                 $table->increments('id');
-                $table->string('word');
+                $table->string('word')->unique();
                 $table->text('definition');
                 $table->boolean('is_valid');
                 $table->foreignId('user');

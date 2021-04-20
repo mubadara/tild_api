@@ -14,7 +14,7 @@ class CreateQuizzs extends Database {
         if(!$this->capsule::schema()->hasTable("quizzs")):
             $this->capsule::schema()->create("quizzs", function (Blueprint $table) {
                 $table->increments('id');
-                $table->string('title');
+                $table->string('title')->unique();
                 $table->timestamps();
             });
         endif;

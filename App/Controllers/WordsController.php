@@ -34,9 +34,18 @@ class WordsController extends Controller
         | You can un-comment it to use this example
         |
         */
-        // $row = new Word;
-        // $row->column = requestData("column");
-        // $row->delete();
+        // $session = new \Leaf\Http\Session(true);
+        $word = new Word;
+        $word->word = requestData('word');
+        $word->definition = requestData('definition');
+        $word->is_valid = 0;
+        /* Get user id based on session */
+        // $word->user = $session->get('id');
+        /* For testing purpose */
+        $word->user = requestData('id', true, true);
+        $word->upvotes = 0;
+        $word->downvotes = 0;
+        $word->save();
     }
 
     /**
@@ -65,9 +74,9 @@ class WordsController extends Controller
         | You can un-comment it to use this example
         |
         */
-        $row = Word::find($id);
-        $row->column = requestData("id");
-        $row->save();
+        // $row = Word::find($id);
+        // $row->column = requestData("id");
+        // $row->save();
     }
 
     /**

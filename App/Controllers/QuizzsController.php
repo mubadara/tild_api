@@ -36,9 +36,9 @@ class QuizzsController extends Controller
      */
     public function store()
     {
-        // $row = new Quizz;
-        // $row->column = requestData("column");
-        // $row->delete();
+        $quizz = new Quizz;
+        $quizz->title = requestData('title');
+        $quizz->save();
     }
 
     /**
@@ -88,7 +88,15 @@ class QuizzsController extends Controller
         | You can un-comment it to use this example
         |
         */
-        // $row = Quizz::find($id);
-        // $row->delete();
+        $row = Quizz::find($id);
+        $questions = Question::where('quizz', $row->id)->get();
+        foreach ($questions as $q) {
+            $reponses = Response::where('question', $q->id)->get();
+            foreach($reponses as $r) {
+                $r->delete();
+            }
+            $q->delete();
+        }
+        $row->delete();
     }
 }

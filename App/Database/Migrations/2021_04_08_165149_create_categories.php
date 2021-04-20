@@ -14,7 +14,7 @@ class CreateCategories extends Database {
         if(!$this->capsule::schema()->hasTable("categories")):
             $this->capsule::schema()->create("categories", function (Blueprint $table) {
                 $table->increments('id');
-                $table->string('name');
+                $table->string('name')->unique();
                 $table->timestamps();
             });
         endif;
